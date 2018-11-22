@@ -1,7 +1,4 @@
 
-
-
-
 /**
  * Write a description of class CalendarioBascio here.
  * 
@@ -22,8 +19,8 @@ public class CalendarioBascioMejorado
      */
     public CalendarioBascioMejorado()
     {
-        pantallaDia = new PantallaDosDigitos(1, 30);
-        pantallaMes = new PantallaDosDigitos(1, 12);
+        pantallaDia = new PantallaDosDigitos(1, 31);
+        pantallaMes = new PantallaDosDigitos(1, 13);
         pantallaAno = new PantallaDosDigitos(1, 99);   
     }
     
@@ -34,7 +31,7 @@ public class CalendarioBascioMejorado
         return pantallaDia.getTextoDeLaPantalla() + "-" + pantallaMes.getTextoDeLaPantalla()  + "-" + pantallaAno.getTextoDeLaPantalla();
     } 
     
-    /**
+   /**
      * Fija la hora de la pantalla con la hora y los minutos especificados.
      */
     public void setCalendario (int newDia, int newMes, int newAno) {
@@ -42,5 +39,19 @@ public class CalendarioBascioMejorado
         pantallaMes.setValorAlmacenado(newMes);
         pantallaAno.setValorAlmacenado(newAno);
     }   
+    
+   /**
+     * Este metodo debe invocarse una vez cada dia. Provoca que la
+     * pantalla del Calendario avance un dia.
+     */
+    public void avanzaFecha() {
+        pantallaDia.incrementaValorAlmacenado();
+        if (pantallaDia.getValorAlmacenado() == 1) {
+          pantallaMes.incrementaValorAlmacenado();
+          if (pantallaMes.getValorAlmacenado() == 1) {
+          pantallaAno.incrementaValorAlmacenado();
+           }
+        }
+    }
 }
    
