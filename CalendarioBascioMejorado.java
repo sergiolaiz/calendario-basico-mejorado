@@ -33,6 +33,14 @@ public class CalendarioBascioMejorado
     public String obtenerFecha() {
         return pantallaDia.getTextoDeLaPantalla() + "-" + pantallaMes.getTextoDeLaPantalla()  + "-" + pantallaAno.getTextoDeLaPantalla();
     } 
-      
+    
+    /**
+     * Fija la hora de la pantalla con la hora y los minutos especificados.
+     */
+    public void setCalendario (int newDia, int newMes, int newAno) {
+        pantallaDia.setValorAlmacenado(newDia);
+        pantallaMes.setValorAlmacenado(newMes);
+        pantallaAno.setValorAlmacenado(newAno);
+    }   
 }
    
