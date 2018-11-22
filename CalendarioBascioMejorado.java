@@ -17,8 +17,8 @@ public class CalendarioBascioMejorado
     //La pantalla de los ano
     private PantallaDosDigitos pantallaAno;
     
-    /**
-     * Constructor for objects of class CalendarioBascio
+   /**
+     * Constructor for objects of class CalendarioBascioMejorado
      */
     public CalendarioBascioMejorado()
     {
@@ -26,7 +26,13 @@ public class CalendarioBascioMejorado
         pantallaMes = new PantallaDosDigitos(1, 12);
         pantallaAno = new PantallaDosDigitos(1, 99);   
     }
-
     
+   /**
+     * Devuelve la hora actual de esta pantalla en el formao HH:MM.
+     */
+    public String obtenerFecha() {
+        return pantallaDia.getTextoDeLaPantalla() + "-" + pantallaMes.getTextoDeLaPantalla()  + "-" + pantallaAno.getTextoDeLaPantalla();
+    } 
+      
 }
    
